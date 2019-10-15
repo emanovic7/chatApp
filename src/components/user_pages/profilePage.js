@@ -25,9 +25,10 @@ class ProfilePage extends Component {
 
 
   render(){
+    console.log("profile page props", this.props)
     return(
       <div>
-        I am the ProfilePage
+        <h2>{`Welcome, ${this.props.user.username}!`}</h2>
       </div>
     )
   }
@@ -35,8 +36,7 @@ class ProfilePage extends Component {
 
 const mapStateToProps = (store) => {
   return {
-    username: store.user.username,
-    userID: store.user.id
+    user: store.user
   }
 }
 
