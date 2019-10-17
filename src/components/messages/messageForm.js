@@ -32,7 +32,7 @@ class MessageForm extends Component {
         I am the MessageForm
         <form onSubmit={this.submitMessage}>
           <input type="text" name="message" value={this.state.message} onChange={this.handleChange} />
-          <input type="submit" value="add message" />
+          <input type="submit" value="chat" />
         </form>
       </div>
     )
