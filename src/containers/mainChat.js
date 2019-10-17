@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 
 
-
+//Components
+import MessageForm from '../components/messages/messageForm';
 
 
 
@@ -10,6 +11,7 @@ class MainChat extends Component {
     return(
       <div>
         I am the MainChat
+        <MessageForm />
       </div>
     )
   }

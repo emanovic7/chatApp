@@ -2,9 +2,13 @@ import React, { Component } from 'react';
 import { createStore } from 'redux';
 import { connect } from 'react-redux'
 
+//Containers
+import SideBar from '../../containers/sidebar';
+import MainChat from '../../containers/mainChat';
+
+
 
 class ProfilePage extends Component {
-
 
   //Fetch User
     componentDidMount() {
@@ -29,6 +33,8 @@ class ProfilePage extends Component {
     return(
       <div>
         <h2>{`Welcome, ${this.props.user.username}!`}</h2>
+        <SideBar />
+        <MainChat />
       </div>
     )
   }
