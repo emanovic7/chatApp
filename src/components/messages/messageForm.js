@@ -21,7 +21,10 @@ class MessageForm extends Component {
 
   submitMessage = (event) => {
     event.preventDefault()
-    console.log(this.state.message)
+    this.props.addMessage(this.state.message)
+    this.setState({
+      message: ''
+    })
   }
 
 

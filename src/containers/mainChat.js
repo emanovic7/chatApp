@@ -2,9 +2,7 @@ import React, { Component } from 'react';
 
 //Containers
 import ChannelsContainer from '../containers/channelsContainer';
-
-//Components
-import MessageForm from '../components/messages/messageForm';
+import MessagesContainer from '../containers/messagesContainer';
 
 
 
@@ -17,7 +15,7 @@ class MainChat extends Component {
       <div>
         I am the MainChat
         <ChannelsContainer />
-        <MessageForm />
+        <MessagesContainer />
       </div>
     )
   }
