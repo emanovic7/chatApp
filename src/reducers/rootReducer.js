@@ -1,21 +1,15 @@
+import { combineReducers } from "redux";
 
 
+//Reducers
+import channelsReducer from '../reducers/channelsReducer';
+import usersReducer from '../reducers/usersReducer';
 
 
-export default (state={user: '', channel: ''}, action) => {
+const rootReducer = combineReducers({
+  user: usersReducer,
+  channel: channelsReducer
+})
 
-  console.log("state from root", state)
-  console.log("nextState ", action)
 
-  switch (action.type) {
-
-    case "SET_USER":
-      return { user: action.user }
-
-    case "SET_CHANNEL":
-      return { channel: action.channel }
-
-    default:
-      return state
-  }
-}
+export default rootReducer;

@@ -37,6 +37,12 @@ const mapStateToProps = (store) => {
   }
 }
 
+const mapDispatchToProps = (dispatch) => {
+  return {
+    setChannel: (channel) => {
+      dispatch({type: "SET_CHANNEL", action: channel})
+    }
+  }
+}
 
-
-export default connect(mapStateToProps, null)(ChannelContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(ChannelContainer);

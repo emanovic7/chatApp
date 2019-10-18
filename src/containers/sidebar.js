@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import { connect } from 'react-redux';
 //Components
 import Channel from '../components/channels/channel';
 
@@ -22,10 +22,18 @@ class Sidebar extends Component {
     }))
   }
 
+  //Change Channel
+  changeChanel = (event) => {
+    // console.log(event.target.innerText)
+    this.props.setChannel(event.target.innerText)
+  }
+
   render(){
     const channels = this.state.channels.map(channel =>
-      <Channel channel={channel}/>
+      <li onClick={this.changeChanel}>{channel.name}</li>
     )
+
+    console.log("props from sidebar", this.props)
 
     return(
       <div>
@@ -36,5 +44,18 @@ class Sidebar extends Component {
   }
 }
 
+const mapStateToProps = (store) => {
+  return {
+    user: store.user
+  }
+}
 
-export default Sidebar;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    setChannel: (channel) => {
+      dispatch({type: "SET_CHANNEL", action: channel})
+    }
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Sidebar);

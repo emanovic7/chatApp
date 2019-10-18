@@ -31,7 +31,7 @@ class ProfilePage extends Component {
 
 
   render(){
-    console.log("profile page props", this.props)
+    console.log("profile page props", this.props.user)
     console.log("profile page state", this.state)
     return(
       <div>
