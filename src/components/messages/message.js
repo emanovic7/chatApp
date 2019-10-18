@@ -4,10 +4,9 @@ import React from 'react';
 
 
 const Message = (props) => {
-  console.log(props)
   return(
     <div>
-      <li>{props.message.message}</li>
+      {props.message.message}
     </div>
   )
 }

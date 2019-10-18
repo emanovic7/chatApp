@@ -10,6 +10,7 @@ import MainChat from '../../containers/mainChat';
 
 class ProfilePage extends Component {
 
+
   //Fetch User
     componentDidMount() {
       if (localStorage.token){
@@ -31,6 +32,7 @@ class ProfilePage extends Component {
 
   render(){
     console.log("profile page props", this.props)
+    console.log("profile page state", this.state)
     return(
       <div>
         <h2>{`Welcome, ${this.props.user.username}!`}</h2>

@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+
 
 
 //Components
@@ -33,7 +35,7 @@ class MessagesContainer extends Component {
       },
       body: JSON.stringify({
         message: message,
-        user_id: 1,
+        user_id: this.props.user.id,
         channel_id: 1
       })
     })
@@ -44,10 +46,9 @@ class MessagesContainer extends Component {
   }
 
 
-  
+
 
   render(){
-    console.log(this.state)
 
     const messages = this.state.messages.map(message =>
       <Message key={message.id} message={message} />
@@ -56,12 +57,17 @@ class MessagesContainer extends Component {
     return (
       <div>
         <h3>Messages</h3>
-        <ul>{messages}</ul>
+        {messages}
         <MessageForm addMessage={this.addNewMessage} />
       </div>
     )
   }
 }
 
+const mapStateToProps = (store) => {
+  return{
+    user: store.user
+  }
+}
 
-export default MessagesContainer;
+export default connect(mapStateToProps, null)(MessagesContainer);
