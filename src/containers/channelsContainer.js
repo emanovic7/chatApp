@@ -15,7 +15,7 @@ class ChannelContainer extends Component {
 
   //Fetch Channels
   componentDidMount(){
-    fetch('http://localhost:3000/channels')
+    fetch('http://localhost:3000/channels/1')
     .then(response => response.json())
     .then(channels => this.setState({
       channels
