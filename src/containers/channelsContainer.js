@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 
 //Components
-import Channel from '../components/channels/Channel';
+import Channel from '../components/channels/channel';
 
 
 class ChannelContainer extends Component {

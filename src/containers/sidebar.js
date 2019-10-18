@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
-
+//Components
+import Channel from '../components/channels/channel';
 
 
 class Sidebar extends Component {
@@ -22,9 +23,14 @@ class Sidebar extends Component {
   }
 
   render(){
+    const channels = this.state.channels.map(channel =>
+      <Channel channel={channel}/>
+    )
+
     return(
       <div>
-        I am the Sidebar
+        <h2>SideBar</h2>
+        <ul>{channels}</ul>
       </div>
     )
   }
