@@ -31,11 +31,11 @@ class ProfilePage extends Component {
 
 
   render(){
-    console.log("profile page props", this.props)
-    console.log("profile page state", this.state)
+    console.log("profile page props", this.props.user.user.username)
+
     return(
       <div className="profile">
-        <h2 className="username">{`Welcome, ${this.props.user.username}!`}</h2>
+        <h2 className="username">{`Welcome, ${this.props.user.user.username}!`}</h2>
         <SideBar />
         <MainChat />
       </div>
@@ -44,6 +44,7 @@ class ProfilePage extends Component {
 }
 
 const mapStateToProps = (state) => {
+
   return {
     user: state.user
   }
