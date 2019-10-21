@@ -31,7 +31,6 @@ class ProfilePage extends Component {
 
 
   render(){
-    console.log("profile page props", this.props.user.user.username)
 
     return(
       <div className="profile">

@@ -49,7 +49,6 @@ class MessagesContainer extends Component {
 
 
   render(){
-    console.log("message container props", this.props.user.user)
     const messages = this.state.messages.map((message, idx) =>
       <Message key={idx} message={message} />
     )

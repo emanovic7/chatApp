@@ -29,8 +29,8 @@ class Sidebar extends Component {
   }
 
   render(){
-    const channels = this.state.channels.map(channel =>
-      <li onClick={this.changeChanel}>{channel.name}</li>
+    const channels = this.state.channels.map((channel, idx) =>
+      <li key={idx} onClick={this.changeChanel}>{channel.name}</li>
     )
 
     return(

@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 
 //Components
 import Channel from '../components/channels/channel';
-
+import ChannelForm from '../components/channels/channelForm';
 
 class ChannelContainer extends Component {
 
@@ -12,6 +12,23 @@ class ChannelContainer extends Component {
     this.state = {
       channel: ''
     }
+  }
+
+  //AddNewChannel
+  AddNewChannel = (channel) => {
+    fetch('http://localhost:3000/channels', {
+      method: "POST",
+      headers: {
+        "Accept": "application/json",
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        name: channel.name,
+        img: channel.img
+      })
+    })
+    .then(response => response.json())
+    .then(channel => console.log(channel))
   }
 
 
@@ -25,7 +42,8 @@ class ChannelContainer extends Component {
     return(
       <div>
         <h3>Current Channel</h3>
-        <Channel channel={this.state.channel}/>
+        <Channel channel={this.state.channel} />
+        <ChannelForm addChannel={(channel) => this.AddNewChannel(channel)}/>
       </div>
     )
   }
