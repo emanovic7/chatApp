@@ -10,7 +10,7 @@ class ChannelContainer extends Component {
   constructor(){
     super();
     this.state = {
-      channel: ''
+      channels: []
     }
   }
 
@@ -28,7 +28,7 @@ class ChannelContainer extends Component {
       })
     })
     .then(response => response.json())
-    .then(channel => console.log(channel))
+    .then(channel => this.props.addChannel(channel))
   }
 
 
@@ -37,12 +37,12 @@ class ChannelContainer extends Component {
     // const allChannels = this.state.channels.map(channel =>
     //   <Channel key={channel.id} channel={channel} />
     // )
-
+    console.log(this.props.channels)
 
     return(
       <div>
         <h3>Current Channel</h3>
-        <Channel channel={this.state.channel} />
+
         <ChannelForm addChannel={(channel) => this.AddNewChannel(channel)}/>
       </div>
     )
@@ -51,7 +51,7 @@ class ChannelContainer extends Component {
 
 const mapStateToProps = (store) => {
   return{
-    channel: store.channel
+    channels: store.channels
   }
 }
 
@@ -59,6 +59,10 @@ const mapDispatchToProps = (dispatch) => {
   return {
     setChannel: (channel) => {
       dispatch({type: "SET_CHANNEL", action: channel})
+    },
+
+    addChannel: (channel) => {
+      dispatch({type: "ADD_CHANNEL", action: channel})
     }
   }
 }

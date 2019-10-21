@@ -8,7 +8,7 @@ import usersReducer from '../reducers/usersReducer';
 
 const rootReducer = combineReducers({
   user: usersReducer,
-  channel: channelsReducer
+  channels: channelsReducer
 })
 
 
