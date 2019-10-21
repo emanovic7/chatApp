@@ -33,8 +33,6 @@ class Sidebar extends Component {
       <li onClick={this.changeChanel}>{channel.name}</li>
     )
 
-    console.log("props from sidebar", this.props)
-
     return(
       <div className="sidebar">
         <h2>SideBar</h2>
@@ -44,9 +42,9 @@ class Sidebar extends Component {
   }
 }
 
-const mapStateToProps = (store) => {
+const mapStateToProps = (state) => {
   return {
-    user: store.user
+    user: state.user
   }
 }
 

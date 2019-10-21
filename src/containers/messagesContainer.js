@@ -35,7 +35,7 @@ class MessagesContainer extends Component {
       },
       body: JSON.stringify({
         message: message,
-        user_id: this.props.user.id,
+        user_id: this.props.user.user.id,
         channel_id: 1
       })
     })
@@ -49,7 +49,7 @@ class MessagesContainer extends Component {
 
 
   render(){
-
+    console.log("message container props", this.props.user.user)
     const messages = this.state.messages.map((message, idx) =>
       <Message key={idx} message={message} />
     )
@@ -64,9 +64,9 @@ class MessagesContainer extends Component {
   }
 }
 
-const mapStateToProps = (store) => {
+const mapStateToProps = (state) => {
   return{
-    user: store.user
+    user: state.user
   }
 }
 
