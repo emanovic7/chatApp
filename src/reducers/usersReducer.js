@@ -1,15 +1,15 @@
 
 
-function usersReducer(state = '', action) {
+function usersReducer(user = '', action) {
 
   switch(action.type){
     case "SET_USER":
       return {
-        state: action.user
+        user: action.user
       }
 
     default:
-      return state
+      return user
   }
 
 }

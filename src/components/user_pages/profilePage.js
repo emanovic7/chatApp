@@ -31,7 +31,7 @@ class ProfilePage extends Component {
 
 
   render(){
-    console.log("profile page props", this.props.user)
+    console.log("profile page props", this.props)
     console.log("profile page state", this.state)
     return(
       <div>
@@ -43,9 +43,9 @@ class ProfilePage extends Component {
   }
 }
 
-const mapStateToProps = (store) => {
+const mapStateToProps = (state) => {
   return {
-    user: store.user
+    user: state.user
   }
 }
 
