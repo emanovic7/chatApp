@@ -34,8 +34,8 @@ class ProfilePage extends Component {
     console.log("profile page props", this.props)
     console.log("profile page state", this.state)
     return(
-      <div>
-        <h2>{`Welcome, ${this.props.user.username}!`}</h2>
+      <div className="profile">
+        <h2 className="username">{`Welcome, ${this.props.user.username}!`}</h2>
         <SideBar />
         <MainChat />
       </div>

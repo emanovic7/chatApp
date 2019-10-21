@@ -5,8 +5,8 @@ import React from 'react';
 
 const Message = (props) => {
   return(
-    <div>
-      {props.message.message}
+    <div className="message">
+      <p className="text">{props.message.message}</p>
     </div>
   )
 }

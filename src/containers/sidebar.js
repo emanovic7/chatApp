@@ -36,7 +36,7 @@ class Sidebar extends Component {
     console.log("props from sidebar", this.props)
 
     return(
-      <div>
+      <div className="sidebar">
         <h2>SideBar</h2>
         <ul>{channels}</ul>
       </div>

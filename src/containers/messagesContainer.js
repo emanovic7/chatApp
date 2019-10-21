@@ -50,12 +50,12 @@ class MessagesContainer extends Component {
 
   render(){
 
-    const messages = this.state.messages.map(message =>
-      <Message key={message.id} message={message} />
+    const messages = this.state.messages.map((message, idx) =>
+      <Message key={idx} message={message} />
     )
 
     return (
-      <div>
+      <div className="chat">
         <h3>Messages</h3>
         {messages}
         <MessageForm addMessage={this.addNewMessage} />

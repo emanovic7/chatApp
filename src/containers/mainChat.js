@@ -12,7 +12,7 @@ class MainChat extends Component {
 
   render(){
     return(
-      <div>
+      <div className="container">
         I am the MainChat
         <ChannelsContainer />
         <MessagesContainer />
