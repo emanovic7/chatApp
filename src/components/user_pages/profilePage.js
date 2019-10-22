@@ -3,7 +3,6 @@ import { createStore } from 'redux';
 import { connect } from 'react-redux'
 
 //Containers
-import SideBar from '../../containers/sidebar';
 import MainChat from '../../containers/mainChat';
 
 
@@ -35,8 +34,6 @@ class ProfilePage extends Component {
     return(
       <div className="profile">
         <h2 className="username">{`Welcome, ${this.props.user.user.username}!`}</h2>
-        <SideBar />
-        <MainChat />
       </div>
     )
   }

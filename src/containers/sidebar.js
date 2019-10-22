@@ -1,7 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+
+//Containers
+import ChannelsContainer from '../containers/channelsContainer';
+
 //Components
 import Channel from '../components/channels/channel';
+import ProfilePage from '../components/user_pages/profilePage';
 
 
 class Sidebar extends Component {
@@ -35,7 +40,8 @@ class Sidebar extends Component {
 
     return(
       <div className="sidebar">
-        <h2>SideBar</h2>
+        <ProfilePage />
+        <ChannelsContainer />
         <ul>{channels}</ul>
       </div>
     )

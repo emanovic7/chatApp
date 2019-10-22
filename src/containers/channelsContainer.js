@@ -10,7 +10,8 @@ class ChannelContainer extends Component {
   constructor(){
     super();
     this.state = {
-      channels: []
+      channels: [],
+      currentChannel: ''
     }
   }
 
@@ -34,15 +35,10 @@ class ChannelContainer extends Component {
 
 
   render(){
-    // const allChannels = this.state.channels.map(channel =>
-    //   <Channel key={channel.id} channel={channel} />
-    // )
-    console.log(this.props.channels)
 
     return(
       <div>
         <h3>Current Channel</h3>
-
         <ChannelForm addChannel={(channel) => this.AddNewChannel(channel)}/>
       </div>
     )

@@ -1,12 +1,16 @@
 import React, { Component } from 'react';
-import ProfilePage from './components/user_pages/profilePage';
 import './App.css';
+
+//Containers
+import Sidebar from './containers/sidebar';
+import MainChat from './containers/mainChat';
 
 class App extends Component {
   render(){
     return (
-      <div className="App">
-        <ProfilePage />
+      <div className="container">
+        <Sidebar />
+        <MainChat />
       </div>
     );
   }
