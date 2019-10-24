@@ -55,7 +55,6 @@ class MessagesContainer extends Component {
 
     return (
       <div className="chat">
-        <h3>Messages</h3>
         {messages}
         <MessageForm addMessage={this.addNewMessage} />
       </div>

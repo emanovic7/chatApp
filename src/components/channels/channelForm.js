@@ -33,9 +33,9 @@ class ChannelForm extends Component {
       <div>
         <form onSubmit={this.handleSubmit}>
           <h3>New Channel</h3>
-          Name: <input type="text" name="name" value={this.state.name} onChange={this.handleChange} /><br />
-          img: <input type="text" name="img" value={this.state.img} onChange={this.handleChange} />
-          <input type="submit" value="submit"/>
+          <input type="text" name="name" value={this.state.name} onChange={this.handleChange} placeholder="add channel"/><br />
+          <input type="text" name="img" value={this.state.img} onChange={this.handleChange} />
+          <button type="submit" value="+"/>
         </form>
       </div>
 

@@ -15,6 +15,16 @@ class ChannelContainer extends Component {
     }
   }
 
+
+    //Fetch Channels
+    componentDidMount(){
+      fetch('http://localhost:3000/channels')
+      .then(response => response.json())
+      .then(channels => this.setState({
+        channels
+      }))
+    }
+
   //AddNewChannel
   AddNewChannel = (channel) => {
     fetch('http://localhost:3000/channels', {
@@ -33,32 +43,43 @@ class ChannelContainer extends Component {
   }
 
 
-
   render(){
+    console.log("channels props", this.props)
+
+    const channelsList = this.state.channels.map((channel, idx) =>
+      <li key={idx} onClick={() => this.props.setChannel(channel)}>{channel.name}</li>
+    )
 
     return(
       <div>
-        <h3>Current Channel</h3>
+        <h3>{this.props.currentChannel.name}</h3>
         <ChannelForm addChannel={(channel) => this.AddNewChannel(channel)}/>
+        <ul>{channelsList}</ul>
       </div>
     )
   }
 }
 
-const mapStateToProps = (store) => {
-  return{
-    channels: store.channels
+const mapStateToProps = (state) => {
+  return {
+    channels: state.channels,
+    currentChannel: state.channels.currentChannel
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
+    setChannels: (channels) => {
+
+      dispatch({type: "SET_CHANNELS", channels: channels})
+    },
+
     setChannel: (channel) => {
-      dispatch({type: "SET_CHANNEL", action: channel})
+      dispatch({type: "SET_CHANNEL", channel: channel})
     },
 
     addChannel: (channel) => {
-      dispatch({type: "ADD_CHANNEL", action: channel})
+      dispatch({type: "ADD_CHANNEL", channel: channel})
     }
   }
 }

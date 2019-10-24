@@ -32,7 +32,6 @@ class MessageForm extends Component {
   render(){
     return(
       <div>
-        I am the MessageForm
         <form onSubmit={this.submitMessage}>
           <input type="text" name="message" value={this.state.message} onChange={this.handleChange} />
           <input type="submit" value="chat" />

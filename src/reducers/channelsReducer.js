@@ -1,12 +1,23 @@
 
-export default (state = {channels: []}, action) => {
+export default (
+  state = {
+    channels: [],
+    currentChannel: ''
+  },
+  action) => {
 
   switch(action.type){
 
+    case "SET_CHANNELS":
+      return {
+        channels: [action.channels]
+      }
+
     case "SET_CHANNEL":
       return {
-        channel: action.channel
+        currentChannel: action.channel
       }
+      // console.log(action.channel)
 
     case "ADD_CHANNEL":
       return {

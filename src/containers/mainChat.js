@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 //Containers
 import MessagesContainer from '../containers/messagesContainer';
@@ -7,12 +8,11 @@ import MessagesContainer from '../containers/messagesContainer';
 
 class MainChat extends Component {
 
-
-
   render(){
+    console.log("mainChat", this.props)
     return(
-      <div className="container">
-        I am the MainChat
+      <div className="chat">
+      <h2>{this.props.currentChannel.name}</h2>
         <MessagesContainer />
       </div>
     )
@@ -20,4 +20,11 @@ class MainChat extends Component {
 }
 
 
-export default MainChat;
+const mapStateToProps = (state) => {
+  return {
+    channels: state.channels,
+    currentChannel: state.channels.currentChannel
+  }
+}
+
+export default connect(mapStateToProps, null)(MainChat);
