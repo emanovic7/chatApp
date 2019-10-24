@@ -49,6 +49,7 @@ class MessagesContainer extends Component {
 
 
   render(){
+    console.log("messages", this.props)
     const messages = this.state.messages.map((message, idx) =>
       <Message key={idx} message={message} />
     )
@@ -64,7 +65,8 @@ class MessagesContainer extends Component {
 
 const mapStateToProps = (state) => {
   return{
-    user: state.user
+    user: state.user,
+    currentChannel: state.channels.currentChannel
   }
 }
 
