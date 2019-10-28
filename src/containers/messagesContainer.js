@@ -36,7 +36,7 @@ class MessagesContainer extends Component {
       body: JSON.stringify({
         message: message,
         user_id: this.props.user.user.id,
-        channel_id: 1
+        channel_id: this.props.currentChannel.id
       })
     })
     .then(response => response.json())
@@ -49,8 +49,14 @@ class MessagesContainer extends Component {
 
 
   render(){
-    console.log("messages", this.props)
-    const messages = this.state.messages.map((message, idx) =>
+    console.log("messages props", this.props)
+
+    //filter messages
+    const channelMessages = this.state.messages.filter(message =>
+      message.channel_id === this.props.currentChannel.id
+    )
+
+    const messages = channelMessages.map((message, idx) =>
       <Message key={idx} message={message} />
     )
 
