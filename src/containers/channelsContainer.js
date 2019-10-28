@@ -10,8 +10,7 @@ class ChannelContainer extends Component {
   constructor(){
     super();
     this.state = {
-      channels: [],
-      currentChannel: ''
+      channels: []
     }
   }
 
@@ -42,12 +41,21 @@ class ChannelContainer extends Component {
     .then(channel => this.props.addChannel(channel))
   }
 
+  //Delete Channel
+  deleteChannel = (channel) => {
+    console.log(channel)
+  }
+
 
   render(){
     console.log("channels props", this.props)
 
     const channelsList = this.state.channels.map((channel, idx) =>
-      <li key={idx} onClick={() => this.props.setChannel(channel)}>{channel.name}</li>
+      <li key={idx}
+        onClick={() => this.props.setChannel(channel)}>
+        {channel.name}- <button onClick={() => this.deleteChannel(channel)}>X</button>
+      </li>
+
     )
 
     return(
@@ -80,6 +88,10 @@ const mapDispatchToProps = (dispatch) => {
 
     addChannel: (channel) => {
       dispatch({type: "ADD_CHANNEL", channel: channel})
+    },
+
+    removeChannel: (channel) => {
+      dispatch({type: "REMOVE_CHANNEL", channel: channel})
     }
   }
 }
