@@ -31,7 +31,7 @@ class Sidebar extends Component {
 
     return(
       <div className="sidebar">
-        <ProfilePage />
+        
         <ChannelsContainer />
       </div>
     )

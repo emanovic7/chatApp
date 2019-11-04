@@ -9,6 +9,7 @@ const Message = (props) => {
   return(
     <div className="message">
       <div>
+      <img alt="user" src={props.message.user.img} />
         <p className="username">{props.message.user.username}</p>
       </div>
       <p className="text">{props.message.message}</p>
