@@ -18,6 +18,13 @@ class Sidebar extends Component {
     }
   }
 
+  // //Fetch Channels
+  // componentDidMount(){
+  //   fetch('http://localhost:3000/channels')
+  //   .then(response => response.json())
+  //   .then(channels => this.props.setChannels(channels))
+  // }
+
 
 
   render(){
@@ -36,6 +43,15 @@ const mapStateToProps = (state) => {
     user: state.user
   }
 }
+
+// const mapDispatchToProps = (dispatch) => {
+//   return {
+//     setChannels: (channels) => {
+//       dispatch({type: "SET_CHANNELS", channels: channels})
+//     }
+//   }
+// }
+
 
 
 export default connect(mapStateToProps, null)(Sidebar);

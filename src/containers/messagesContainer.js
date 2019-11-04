@@ -23,6 +23,7 @@ class MessagesContainer extends Component {
     .then(messages => this.setState({
       messages: messages
     }))
+    
   }
 
   //NEW MESSAGE
@@ -49,8 +50,6 @@ class MessagesContainer extends Component {
 
 
   render(){
-    console.log("messages props", this.props)
-
     //filter messages
     const channelMessages = this.state.messages.filter(message =>
       message.channel_id === this.props.currentChannel.id
@@ -61,7 +60,7 @@ class MessagesContainer extends Component {
     )
 
     return (
-      <div className="chat">
+      <div className="">
         {messages}
         <MessageForm addMessage={this.addNewMessage} />
       </div>

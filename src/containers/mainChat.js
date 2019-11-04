@@ -9,7 +9,6 @@ import MessagesContainer from '../containers/messagesContainer';
 class MainChat extends Component {
 
   render(){
-    console.log("mainChat", this.props)
     return(
       <div className="chat">
       <h2>{this.props.currentChannel.name}</h2>

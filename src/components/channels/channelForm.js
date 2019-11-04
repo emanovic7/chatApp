@@ -7,8 +7,7 @@ class ChannelForm extends Component {
   constructor(){
     super();
     this.state = {
-      name: '',
-      img: ''
+      name: ''
     }
   }
 
@@ -22,8 +21,7 @@ class ChannelForm extends Component {
     event.preventDefault()
     this.props.addChannel(this.state)
     this.setState({
-      name: '',
-      img: ''
+      name: ''
     })
   }
 
@@ -32,10 +30,8 @@ class ChannelForm extends Component {
 
       <div>
         <form onSubmit={this.handleSubmit}>
-          <h3>New Channel</h3>
-          <input type="text" name="name" value={this.state.name} onChange={this.handleChange} placeholder="add channel"/><br />
-          <input type="text" name="img" value={this.state.img} onChange={this.handleChange} />
-          <button type="submit" value="+"/>
+          <input type="text" name="name" value={this.state.name} onChange={this.handleChange} placeholder="add channel"/>
+          <button type="submit">+</button>
         </form>
       </div>
 

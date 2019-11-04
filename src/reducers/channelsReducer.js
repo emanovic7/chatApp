@@ -2,7 +2,7 @@
 export default (
   state = {
     channels: [],
-    currentChannel: ''
+    currentChannel: {}
   },
   action) => {
 
@@ -10,7 +10,7 @@ export default (
 
     case "SET_CHANNELS":
       return {
-        channels: [action.channels]
+        channels: [...action.channels]
       }
 
     case "SET_CHANNEL":
@@ -20,6 +20,7 @@ export default (
       // console.log(action.channel)
 
     case "ADD_CHANNEL":
+    // debugger
       return {
         ...state,
         channels: [...state.channels, action.channel]
