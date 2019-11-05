@@ -18,20 +18,23 @@ class Sidebar extends Component {
     }
   }
 
-  // //Fetch Channels
-  // componentDidMount(){
-  //   fetch('http://localhost:3000/channels')
-  //   .then(response => response.json())
-  //   .then(channels => this.props.setChannels(channels))
-  // }
-
-
+  handleLogout = () => {
+    localStorage.clear()
+    this.props.history.push('/login')
+  }
 
   render(){
-
+    console.log("sidebar props", this.props)
     return(
       <div className="sidebar">
-        
+      {this.props.user.user.username ?
+        <div>
+          <button onClick={this.handleLogout}>Logout</button>
+          <h2 className="">{`hola, ${this.props.user.user.username}!`}</h2>
+        </div>
+        :
+        <h1>getting your info...</h1>
+      }
         <ChannelsContainer />
       </div>
     )

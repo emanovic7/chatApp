@@ -33,7 +33,6 @@ class ProfilePage extends Component {
 
     return(
       <div className="profile">
-        <h2 className="username">{`Welcome, ${this.props.user.user.username}!`}</h2>
         <div className="container">
           <Sidebar />
           <MainChat />

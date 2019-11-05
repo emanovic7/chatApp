@@ -23,7 +23,7 @@ class MessagesContainer extends Component {
     .then(messages => this.setState({
       messages: messages
     }))
-    
+
   }
 
   //NEW MESSAGE

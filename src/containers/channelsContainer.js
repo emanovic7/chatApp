@@ -40,10 +40,10 @@ class ChannelContainer extends Component {
       })
     })
     .then(response => response.json())
-    .then(channel => this.props.addChannel(channel))
-    // .then(channel => this.setState({
-    //     channels: [...this.state.channels, channel]
-    // }))
+    //.then(channel => this.props.addChannel(channel))
+    .then(channel => this.setState({
+        channels: [...this.state.channels, channel]
+    }))
   }
 
   //Delete Channel
