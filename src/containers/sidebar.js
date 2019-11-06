@@ -24,7 +24,7 @@ class Sidebar extends Component {
   }
 
   render(){
-    console.log("sidebar props", this.props)
+    
     return(
       <div className="sidebar">
       {this.props.user.user.username ?

@@ -9,12 +9,14 @@ export default (
   switch(action.type){
 
     case "SET_CHANNELS":
+    debugger
       return {
-        channels: [...action.channels]
+        channels: [...state.channels, action.channels]
       }
 
     case "SET_CHANNEL":
       return {
+        ...state,
         currentChannel: action.channel
       }
       // console.log(action.channel)
@@ -25,6 +27,14 @@ export default (
         ...state,
         channels: [...state.channels, action.channel]
       }
+
+    case 'REMOVE_CHANNEL':
+      console.log(action.channel)
+      console.log(state)
+      // const newState = state.channels.filter(channel =>
+      //   channel.id !== action.channel.id
+      // )
+      // console.log(newState)
 
     default:
       return state

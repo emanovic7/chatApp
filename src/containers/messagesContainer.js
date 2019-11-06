@@ -51,9 +51,14 @@ class MessagesContainer extends Component {
 
   render(){
     //filter messages
-    const channelMessages = this.state.messages.filter(message =>
-      message.channel_id === this.props.currentChannel.id
-    )
+    if(this.props.currentChannel){
+      const channelMessages = this.state.messages.filter(message =>
+        message.channel_id === this.props.currentChannel.id
+      )
+    }else {
+      "Hola!"
+    }
+
 
     const messages = channelMessages.map((message, idx) =>
       <Message key={idx} message={message} />

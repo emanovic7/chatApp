@@ -5,7 +5,6 @@ import React from 'react';
 
 const Message = (props) => {
 
-  console.log("message props", props)
   return(
     <div className="message">
       <div>

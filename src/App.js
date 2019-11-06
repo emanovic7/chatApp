@@ -12,8 +12,8 @@ import FourOhFour from './components/user_pages/fourOhFour';
 
 
 //Containers
-import Sidebar from './containers/sidebar';
-import MainChat from './containers/mainChat';
+// import Sidebar from './containers/sidebar';
+//import MainChat from './containers/mainChat';
 
 class App extends Component {
   render(){
