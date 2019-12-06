@@ -19,10 +19,10 @@ class ChannelContainer extends Component {
     componentDidMount(){
       fetch('http://localhost:3000/channels')
       .then(response => response.json())
-      // .then(channels => this.setState({
-      //   channels
-      // }))
-      .then(channels => this.props.setChannels(channels))
+      .then(channels => this.setState({
+        channels
+      }))
+      //.then(channels => this.props.setChannels(channels))
       // debugger
       // //.then(channels => this.props.setChannel(channels[0]))
     }
@@ -57,7 +57,7 @@ class ChannelContainer extends Component {
 
     console.log("channels props", this.props)
 
-    const channelsList = this.props.channels.channels.map((channel, idx) =>
+    const channelsList = this.state.channels.map((channel, idx) =>
       <li key={idx}
         onClick={() => this.props.setChannel(channel)}>
         {channel.name}

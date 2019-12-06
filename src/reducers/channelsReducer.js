@@ -16,7 +16,7 @@ export default (
 
     case "SET_CHANNEL":
       return {
-        ...state,
+         ...state,
         currentChannel: action.channel
       }
       // console.log(action.channel)
@@ -30,7 +30,7 @@ export default (
 
     case 'REMOVE_CHANNEL':
       console.log(action.channel)
-      console.log(state)
+      console.log("state", state)
       // const newState = state.channels.filter(channel =>
       //   channel.id !== action.channel.id
       // )
