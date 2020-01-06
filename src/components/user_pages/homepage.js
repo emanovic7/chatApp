@@ -1,14 +1,49 @@
 import React, { Component } from 'react';
+import Grid from "@material-ui/core/Grid";
+import { withStyles } from "@material-ui/core/styles";
+import PropTypes from "prop-types";
+import Typography from "@material-ui/core/Typography";
+import TextField from "@material-ui/core/TextField";
+import { Button } from '@material-ui/core';
 
 
+const styles = theme => ({
+  root: {
+    margin: theme.spacing.unit * 8,
+    padding: theme.spacing.unit * 3
+  },
+  item: {
+    padding: theme.spacing.unit * 2
+  },
+  content: {
+    alignItems: 'center',
+    display: 'flex'
+  }
+});
 
 
 class HomePage extends Component {
 
   render(){
+    const { classes } = this.props;
+
+
+
     return(
       <div>
         <h3>Welcome to ChatApp</h3>
+
+        <Grid container direction="row">
+          <Grid item >
+            Login
+          </Grid>
+
+          <Grid item>
+            SignUp
+          </Grid>
+
+        </Grid>
+
       </div>
     )
   }
